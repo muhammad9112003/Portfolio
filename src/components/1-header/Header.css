@@ -1,0 +1,175 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 4rem;
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+}
+
+header .menu {
+    display: none;
+
+}
+
+header nav {
+    background-color: var(--bgHeader);
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 40px rgba(53, 50, 50, 0.292);
+}
+
+@media (max-width:767px) {
+    header nav {
+        display: none;
+    }
+
+    header .menu {
+        display: block;
+    }
+}
+
+header ul {
+    display: flex;
+    gap: 16px;
+}
+
+header ul li a {
+    color: var(--nav);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition-duration: var(--duration);
+}
+
+header ul li a:hover {
+    color: var(--blue);
+    margin-left: 2px;
+}
+
+header button.mode,
+header button.menu {
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    padding: 8px;
+    opacity: 0.7;
+    border: 2px solid var(--modeBorder);
+    border-radius: 50%;
+    text-align: center;
+    transition-duration: var(--duration);
+    background-color: var(--bgHeader);
+}
+
+header button.mode:active {
+    rotate: 360deg;
+}
+
+header button.mode:hover,
+header button.menu:hover {
+    opacity: 1;
+    border: 2px solid var(--modeBorder);
+
+}
+
+header button.mode:active,
+header button.menu:active {
+    scale: 0.4;
+}
+
+@keyframes turn {
+    0% {
+        scale: 0;
+    }
+
+    60% {
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1.0;
+    }
+}
+
+header .popUp {
+    animation: turn 0.6s 1;
+    position: fixed;
+    inset: 0;
+    z-index: 1024;
+    background-color: rgba(40, 40, 40, 0.9);
+    backdrop-filter: blur(6px);
+}
+
+header .model {
+    display: block;
+    background-color: var(--bgContainer);
+    width: 75%;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+
+}
+
+header .model li {
+    border-bottom: 2px solid var(--modelBorder);
+    margin: 2rem 0;
+    padding-bottom: 1rem;
+}
+
+header .model li:last-child,
+header .model li:first-child {
+    border-bottom: none;
+}
+
+header .model li:first-child {
+    text-align: right;
+    margin: 0%;
+    margin-bottom: -35px;
+    padding: 0;
+}
+
+header .cancel {
+    font-size: 1.7rem;
+    color: var(--blue);
+    transition-duration: calc(var(--duration) - 0.2s);
+}
+
+header .cancel:hover {
+    font-size: 1.9rem;
+    color: crimson;
+    rotate: 180deg;
+}
+
+.scrollTop {
+    background-color: var(--blue);
+    color: black;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.4rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 3%;
+    transition-duration: calc(var(--duration) - 0.2s);
+    transition-timing-function: ease-in-out;
+    border: 1px solid rgba(250, 128, 114, 0.327);
+    display: block;
+}
+
+.scrollTop:hover {
+    color: var(--blue);
+    background-color: black;
+}
+
+.scrollTop:active {
+    scale: 0.3;
+}
+
+@media (max-width:767px) {
+    .scrollTop {
+        opacity: 0.6;
+        width: 2rem;
+        height: 2rem;
+        z-index: 1;
+    }
+}
